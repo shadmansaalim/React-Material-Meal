@@ -59,7 +59,7 @@ const Restaurants = () => {
                 )}
 
             />
-            <ImageList sx={{ width: '100%', height: '100%', marginRight: 'auto', marginLeft: 'auto' }}>
+            <ImageList sx={{ width: '100%', height: '100%' }} style={{ gap: 0 }}>
                 <ImageListItem key="Subheader" cols={3}>
                 </ImageListItem>
 
