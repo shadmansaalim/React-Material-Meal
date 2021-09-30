@@ -4,15 +4,12 @@ import './Header.css';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
-import IconButton from '@mui/material/IconButton';
-import MenuIcon from '@mui/icons-material/Menu';
+
 const Header = () => {
     return (
 
         <Box sx={{ flexGrow: 1 }}>
-            <AppBar>
+            <AppBar color="primary">
                 <Box sx={{ display: 'flex' }}>
                     <Toolbar>
                         <NavLink
@@ -63,39 +60,6 @@ const Header = () => {
             </AppBar>
         </Box>
 
-
-        // <div>
-        //     <NavLink className="nav-links"
-        //         to="/home"
-        //         activeStyle={{
-        //             fontWeight: "bold",
-        //             color: "red",
-        //             textDecoration: 'underline'
-        //         }}
-        //     >
-        //         Home
-        //     </NavLink>
-        //     <NavLink className="nav-links"
-        //         to="/meals"
-        //         activeStyle={{
-        //             fontWeight: "bold",
-        //             color: "red",
-        //             textDecoration: 'underline'
-        //         }}
-        //     >
-        //         Meals
-        //     </NavLink>
-        //     <NavLink className="nav-links"
-        //         to="/about"
-        //         activeStyle={{
-        //             fontWeight: "bold",
-        //             color: "red",
-        //             textDecoration: 'underline'
-        //         }}
-        //     >
-        //         About
-        //     </NavLink>
-        // </div>
     );
 };
 

@@ -1,19 +1,14 @@
 import React from 'react';
-import SearchBar from '../SearchBar/SearchBar'
-import { Box } from '@mui/system';
-import { useState } from 'react';
-import { useEffect } from 'react';
-import { Grid } from '@mui/material';
+import { useState, useEffect } from 'react';
 import Meal from '../Meal/Meal';
 import { Container } from '@mui/material';
-
-
-
+import Autocomplete from '@mui/material/Autocomplete';
+import TextField from '@mui/material/TextField';
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
-import ImageListItemBar from '@mui/material/ImageListItemBar';
 import IconButton from '@mui/material/IconButton';
-import InfoIcon from '@mui/icons-material/Info';
+import SearchIcon from '@mui/icons-material/Search';
+
 const Restaurants = () => {
     const [meals, setMeals] = useState([]);
     const [searchText, setSearchText] = useState('');
@@ -32,7 +27,33 @@ const Restaurants = () => {
 
 
         <Container fixed style={{ marginTop: '120px' }}>
-            <SearchBar handleSearch={handleSearch}></SearchBar>
+            <Autocomplete
+                onChange={handleSearch}
+                sx={{ width: '80%', mx: 'auto', my: 5 }}
+                style={{ backgroundColor: 'white', borderRadius: '8px' }}
+                freeSolo
+                id="free-solo-2-demo"
+                disableClearable
+                options={meals.map((option) => option.strMeal)}
+                renderInput={(params) => (
+                    <TextField
+                        {...params}
+                        placeholder="Looking for foods? "
+                        InputProps={{
+                            ...params.InputProps,
+                            type: 'search',
+                            endAdornment: (
+                                <IconButton sx={{ p: '10px' }} aria-label="search">
+                                    <SearchIcon />
+                                </IconButton>
+                            )
+                        }}
+
+                    />
+                )}
+
+            />
+            {/* <SearchBar handleSearch={handleSearch}></SearchBar> */}
             <ImageList sx={{ width: '100%', height: '100%', marginRight: 'auto', marginLeft: 'auto' }}>
                 <ImageListItem key="Subheader" cols={3}>
                 </ImageListItem>

@@ -29,7 +29,7 @@ const MealDetails = () => {
 
     return (
         <Container fixed>
-            <Card sx={{ marginTop: '50px', width: '80%', marginRight: 'auto', marginLeft: 'auto' }}>
+            <Card sx={{ marginTop: '120px', width: '60%', marginRight: 'auto', marginLeft: 'auto' }}>
                 <CardActionArea>
                     <CardMedia
                         component="img"

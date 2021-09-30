@@ -1,11 +1,18 @@
 import React from 'react';
-import Header from '../Header/Header'
 import './Home.css'
+import { Button } from '@mui/material';
+import { Container } from '@mui/material';
+import { Link } from 'react-router-dom';
 const Home = () => {
     return (
-        <div style={{ marginTop: '150px' }}>
-            <h1>Welcome To Developer's Kitchen</h1>
-        </div>
+        <Container fixed>
+            <div style={{ marginTop: '300px' }}>
+                <h1 style={{ color: 'white', fontSize: '3rem', fontWeight: '900' }}><i>Welcome To <span style={{ color: 'steelblue' }}>Developer's</span> Kitchen</i></h1>
+                <Link to='/meals' style={{ textDecoration: 'none' }}>
+                    <Button variant="contained" color="success">View Meals</Button>
+                </Link>
+            </div>
+        </Container>
     );
 };
 
