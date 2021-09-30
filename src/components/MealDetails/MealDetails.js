@@ -6,13 +6,16 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea, Container, Button } from '@mui/material';
+import YouTubeIcon from '@mui/icons-material/YouTube';
+import { Box } from '@mui/system';
+import { Link } from 'react-router-dom';
 const MealDetails = () => {
     const { mealId } = useParams();
     const [meal, setMeal] = useState({});
     const history = useHistory();
 
-    const { strMeal, strMealThumb, strInstructions } = meal;
-
+    const { strMeal, strMealThumb, strInstructions, strYoutube } = meal;
+    console.log(meal)
     useEffect(() => {
         const url = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealId}`;
         fetch(url)
@@ -23,6 +26,7 @@ const MealDetails = () => {
     const handleAllMeals = () => {
         history.push('/meals')
     }
+
 
 
     return (
@@ -45,7 +49,15 @@ const MealDetails = () => {
 
                     </CardContent>
                 </CardActionArea>
-                <Button onClick={handleAllMeals} style={{ marginTop: '10px', marginBottom: '10px' }} variant="contained" color="primary">View All Meals</Button>
+                <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', my: 2 }}>
+                    <Button sx={{ mr: 2 }} variant="contained" color="error">
+
+                        <a target="_blank" href={strYoutube} style={{ textDecoration: 'none', color: 'white', display: 'flex', alignItems: 'center', justifyContent: 'around' }}>Recpie<YouTubeIcon></YouTubeIcon></a>
+
+                    </Button>
+                    <Button onClick={handleAllMeals} variant="contained" color="primary">View All Meals</Button>
+                </Box>
+
             </Card>
         </Container>
     );
