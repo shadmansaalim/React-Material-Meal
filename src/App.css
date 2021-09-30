@@ -36,3 +36,16 @@
     transform: rotate(360deg);
   }
 }
+
+html,body{
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+
+body{
+  background-color: #282c34;
+}
