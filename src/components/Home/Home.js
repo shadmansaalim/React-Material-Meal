@@ -1,9 +1,11 @@
 import React from 'react';
 import Header from '../Header/Header'
-
+import './Home.css'
 const Home = () => {
     return (
-        <h2>Home</h2>
+        <div style={{ marginTop: '150px' }}>
+            <h1>Welcome To Developer's Kitchen</h1>
+        </div>
     );
 };
 

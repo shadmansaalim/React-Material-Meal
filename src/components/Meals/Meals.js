@@ -31,7 +31,7 @@ const Restaurants = () => {
     return (
 
 
-        <Container fixed>
+        <Container fixed style={{ marginTop: '120px' }}>
             <SearchBar handleSearch={handleSearch}></SearchBar>
             <ImageList sx={{ width: '100%', height: '100%', marginRight: 'auto', marginLeft: 'auto' }}>
                 <ImageListItem key="Subheader" cols={3}>

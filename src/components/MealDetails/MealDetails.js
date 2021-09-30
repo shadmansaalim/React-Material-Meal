@@ -7,6 +7,7 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
 import { Container } from '@mui/material';
+import { Button } from '@mui/material';
 const MealDetails = () => {
     const { mealId } = useParams();
     const [meal, setMeal] = useState({});
@@ -20,6 +21,10 @@ const MealDetails = () => {
             .then(res => res.json())
             .then(data => setMeal(data.meals[0]))
     }, [])
+
+    const handleAllMeals = () => {
+        history.push('/meals')
+    }
 
 
     return (
@@ -42,6 +47,7 @@ const MealDetails = () => {
 
                     </CardContent>
                 </CardActionArea>
+                <Button onClick={handleAllMeals} style={{ marginTop: '10px', marginBottom: '10px' }} variant="contained" color="primary">View All Meals</Button>
             </Card>
         </Container>
     );
