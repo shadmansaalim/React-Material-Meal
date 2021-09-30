@@ -59,16 +59,15 @@ const Restaurants = () => {
                 )}
 
             />
-            <ImageList sx={{ width: '100%', height: '100%' }} style={{ gap: 0 }}>
-                <ImageListItem key="Subheader" cols={3}>
-                </ImageListItem>
+            <ImageList sx={{ width: '100%', height: '100%' }} style={{ gridTemplateColumns: 'repeat(3, 1fr)', gap: 6 }}>
+
 
                 {
                     meals?.map(meal => <Meal meal={meal}></Meal>)
                 }
 
             </ImageList>
-        </Container>
+        </Container >
 
 
     );
