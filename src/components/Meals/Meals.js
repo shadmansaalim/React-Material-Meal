@@ -8,7 +8,7 @@ import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
 import IconButton from '@mui/material/IconButton';
 import SearchIcon from '@mui/icons-material/Search';
-
+import './Meals.css'
 const Restaurants = () => {
     const [meals, setMeals] = useState([]);
     const [searchText, setSearchText] = useState('');
@@ -59,9 +59,7 @@ const Restaurants = () => {
                 )}
 
             />
-            <ImageList sx={{ width: '100%', height: '100%' }} style={{ gridTemplateColumns: 'repeat(3, 1fr)', gap: 6 }}>
-
-
+            <ImageList className="meal-container" sx={{ width: '100%', height: '100%' }}>
                 {
                     meals?.map(meal => <Meal meal={meal}></Meal>)
                 }

@@ -1,0 +1,10 @@
+.meal-container{
+    grid-template-columns: repeat(3,1fr) !important;
+    gap: 6px !important;
+}
+
+@media only screen and (max-width: 688px){
+    .meal-container{
+        grid-template-columns: repeat(2,1fr) !important;
+    }
+}
