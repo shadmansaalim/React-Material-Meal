@@ -20,27 +20,32 @@ const Restaurants = () => {
         const url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${searchText}`;
         fetch(url)
             .then(res => res.json())
-            .then(data => setMeals(data.meals))
+            .then(data => {
+                if (data.meals !== null) {
+                    setMeals(data.meals)
+                }
+            })
     }, [searchText])
+
 
     return (
 
 
         <Container fixed style={{ marginTop: '120px' }}>
             <Autocomplete
-                onChange={handleSearch}
+
                 sx={{ width: '80%', mx: 'auto', my: 5 }}
                 style={{ backgroundColor: 'white', borderRadius: '8px' }}
                 freeSolo
                 id="free-solo-2-demo"
                 disableClearable
-                options={meals.map((option) => option.strMeal)}
+                options={meals?.map((option) => option?.strMeal)}
                 renderInput={(params) => (
                     <TextField
                         {...params}
                         placeholder="Looking for foods? "
                         InputProps={{
-                            ...params.InputProps,
+                            ...params?.InputProps,
                             type: 'search',
                             endAdornment: (
                                 <IconButton sx={{ p: '10px' }} aria-label="search">
@@ -48,18 +53,20 @@ const Restaurants = () => {
                                 </IconButton>
                             )
                         }}
+                        onChange={handleSearch}
 
                     />
                 )}
 
             />
-            {/* <SearchBar handleSearch={handleSearch}></SearchBar> */}
             <ImageList sx={{ width: '100%', height: '100%', marginRight: 'auto', marginLeft: 'auto' }}>
                 <ImageListItem key="Subheader" cols={3}>
                 </ImageListItem>
+
                 {
                     meals?.map(meal => <Meal meal={meal}></Meal>)
                 }
+
             </ImageList>
         </Container>
 
